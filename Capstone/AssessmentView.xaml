@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.AssessmentView"
+             Title="Assessment View"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="4" Spacing="10">
+            <Entry x:Name="assessmentName"
+                   Placeholder="Assessment Name"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="15"
+                   TextColor="Black"/>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="Start Date:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <DatePicker x:Name="assessmentStart" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="End Date:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <DatePicker x:Name="assessmentEnd" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="Type:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <Picker x:Name="assessmentType" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        Title="Select an assessment type">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Performance</x:String>
+                            <x:String>Objective</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <Button Text="Save" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    Clicked="OnSaveClicked"/>
+
+            <Button Text="Set Start Alert" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    Clicked="OnStartAlertClicked"/>
+
+            <Button Text="Set End Alert" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    Clicked="OnEndAlertClicked"/>
+
+            <Button Text="Delete" 
+                    BackgroundColor="Red" 
+                    TextColor="White" 
+                    Clicked="OnDeleteClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.CourseView"
+             Title="Course View"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="4">
+            <Entry x:Name="courseName" 
+                   Text="Course Name" 
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center" 
+                   FontSize="20" 
+                   TextColor="Black"/>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="Course Start:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <DatePicker x:Name="courseStart" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="Course End:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <DatePicker x:Name="courseEnd" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="18">
+                <Label Text="Status:" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="18" 
+                       TextColor="Black"/>
+
+                <Picker x:Name="courseStat" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        Title="Select a status"
+                        />
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Instructor" 
+           HorizontalOptions="Center"
+           FontSize="20"
+           FontAttributes="Bold"/>
+                <Entry x:Name="instructorName"
+           Placeholder="Instructor Name"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           FontSize="20"
+           TextColor="Black"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Phone" 
+           HorizontalOptions="Center"
+           FontSize="20"
+           FontAttributes="Bold"/>
+                <Entry x:Name="instructorPhone"
+           Placeholder="Instructor Phone"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           FontSize="20"
+           TextColor="Black"
+           Keyboard="Telephone"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Email" 
+           HorizontalOptions="Center"
+           FontSize="20"
+           FontAttributes="Bold"/>
+                <Entry x:Name="instructorEmail"
+           Placeholder="Instructor Email"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           FontSize="20"
+           TextColor="Black"
+           Keyboard="Email"/>
+            </VerticalStackLayout>
+
+
+
+            <Border Stroke="Black" 
+                    StrokeThickness="4" 
+                    Padding="4">
+                <VerticalStackLayout Spacing="3">
+                    
+                   
+
+                    <VerticalStackLayout x:Name="assessmentsLayout"
+                                 Padding="5"
+                                 Spacing="5">
+                        <Entry x:Name="performanceAssessment"
+       Placeholder="Performance Assessment"
+       HorizontalOptions="Center"
+       VerticalOptions="Center"
+       TextColor="Black"/>
+
+                        <Entry x:Name="objectiveAssessment"
+       Placeholder="Objective Assessment"
+       HorizontalOptions="Center"
+       VerticalOptions="Center"
+       TextColor="Black"/>
+
+                    </VerticalStackLayout>
+
+
+
+                    <Label Text="Course Details" 
+                           FontSize="Medium" 
+                           FontAttributes="Bold" 
+                           TextColor="Black"/>
+                    <Entry x:Name="courseDetails" 
+                           TextColor="Black"/>
+
+                    <Label Text="Optional Notes" 
+                           FontSize="Medium" 
+                           FontAttributes="Bold" 
+                           TextColor="Black"/>
+                    <Editor x:Name="optionalNotes" 
+                            TextColor="Black"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Frame Padding="10" BackgroundColor="Transparent">
+                <Button Text="Save" 
+            BackgroundColor="Black" 
+            TextColor="White" 
+            Clicked="OnSaveClicked"/>
+            </Frame>
+
+            <Frame Padding="10" BackgroundColor="Transparent">
+                <Button Text="Set Start Alert" 
+            BackgroundColor="Black" 
+            TextColor="White" 
+            Clicked="OnStartAlertClicked"/>
+            </Frame>
+
+            <Frame Padding="10" BackgroundColor="Transparent">
+                <Button Text="Set End Alert" 
+            BackgroundColor="Black" 
+            TextColor="White" 
+            Clicked="OnEndAlertClicked"/>
+            </Frame>
+
+            <Frame Padding="10" BackgroundColor="Transparent">
+                <Button Text="Share Notes" 
+            BackgroundColor="Black" 
+            TextColor="White" 
+            Clicked="OnShareNotesClicked"/>
+            </Frame>
+
+            <Frame Padding="10" BackgroundColor="Transparent">
+                <Button Text="Delete" 
+            BackgroundColor="Red" 
+            TextColor="White" 
+            Clicked="OnDeleteClicked"/>
+            </Frame>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+
+
