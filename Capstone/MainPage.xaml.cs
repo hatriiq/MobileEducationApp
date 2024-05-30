@@ -252,7 +252,7 @@ namespace C971
             termBind.Children.Add(buttonAddTerm);
 
             
-            foreach (Course course in courses[termSelected])
+            foreach (Course course in courses[termSelected])     //Grid feature is a scalable design element.
             {
                 Grid grid = new Grid
                 {

@@ -6,7 +6,7 @@ using Microsoft.Maui.Storage;
 
 namespace C971
 {
-    public class Database
+    public class Database  //Encapsulation example
     {
         
         public static string DatabasePath = Path.Combine(FileSystem.AppDataDirectory, "MyApp.db");
@@ -100,17 +100,17 @@ namespace C971
             db.CreateTable<Course>();
             db.CreateTable<Assessment>();
         }
-        public static void AddAssessment(SQLiteConnection db, Assessment assessment) => db.Insert(assessment);
+        public static void AddAssessment(SQLiteConnection db, Assessment assessment) => db.Insert(assessment);  //  Add data
 
-        public static void UpdateAssessment(SQLiteConnection db, Assessment assessment) => db.Update(assessment);
+        public static void UpdateAssessment(SQLiteConnection db, Assessment assessment) => db.Update(assessment);  //  Modify data
 
-        public static void DeleteAssessment(SQLiteConnection db, Assessment assessment) => db.Delete(assessment);
+        public static void DeleteAssessment(SQLiteConnection db, Assessment assessment) => db.Delete(assessment);  //  Delete data
 
         public static void AddNewCourse(int termId)
         {
             using var db = new SQLiteConnection(DatabasePath);
             Course newCourse = new Course(termId, "NewCourseAuto", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Course Details:", "Anika Patel", "555-123-4567", "anika.patel@strimeuniversity.edu", "PA", "OA","");
-            AddCourse(db, newCourse);
+            AddCourse(db, newCourse); // Polymorphism example Overriding Course object with Method.
             db.Update(newCourse);
             MainPage.SyncDb();
         }

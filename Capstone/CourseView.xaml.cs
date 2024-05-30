@@ -227,7 +227,7 @@ namespace C971
             }
         }
 
-        private bool ValidateInputs()
+        private bool ValidateInputs()                                                                      // Validation Functionality
         {
             if (courseStart.Date >= courseEnd.Date)
             {

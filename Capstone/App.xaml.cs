@@ -7,25 +7,37 @@ using Plugin.LocalNotification;
 
 namespace C971
 {
-    public partial class App : Application
+    public partial class App : Application   //App class inherits from Application Example of Inheritance.
     {
         public static string DatabasePath = Path.Combine(FileSystem.AppDataDirectory, "MyApp.db");
-        private static readonly SQLiteConnection db = new SQLiteConnection(DatabasePath);
 
         public App()
         {
             InitializeComponent();
             InitializeDatabase();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new LoginPage());
             LocalNotificationCenter.Current.RequestNotificationPermission();
+        }
+
+        private static SQLiteConnection GetDatabaseConnection()
+        {
+            return new SQLiteConnection(DatabasePath);
         }
 
         private static void InitializeDatabase()
         {
-            db.CreateTable<Term>();
-            db.CreateTable<Course>();
+            using (var db = GetDatabaseConnection())
+            {
+                db.RunInTransaction(() =>
+                {
+                    db.CreateTable<Term>();
+                    db.CreateTable<Course>();
+                    db.CreateTable<Assessment>();
+                });
+            }
         }
     }
 }
+
 
 
