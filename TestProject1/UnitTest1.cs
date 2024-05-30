@@ -13,7 +13,7 @@ namespace TestProject1
         public void IsValidUser_ShouldReturnExpectedResult(string username, string password, bool expected)
         {
             
-            var loginPage = new LoginPage();
+            var loginPage = new LoginPage();  
 
             
             var result = loginPage.IsValidUser(username, password);
