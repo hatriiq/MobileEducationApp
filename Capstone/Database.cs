@@ -6,7 +6,7 @@ using Microsoft.Maui.Storage;
 
 namespace C971
 {
-    public class Database  //Encapsulation example
+    public class Database  //Encapsulation example.
     {
         
         public static string DatabasePath = Path.Combine(FileSystem.AppDataDirectory, "MyApp.db");
